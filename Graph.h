@@ -1,10 +1,9 @@
 #ifndef GRAPH_H
 #define GRAPH_H
-
 #include "Edges.h"
 #include "Vertex.h"
 #include <vector>
-using namespace std;
+
 template <class T>
 class Graph{
  public: 
@@ -13,13 +12,6 @@ class Graph{
 }
   Graph(bool directed) {
     this->directed = directed;
-}
-  ~Graph() {
-	//delete v;
-	//delete E;
-	//delete v2;
-	//delete v1;
-	//delete v;
 }
  void newVertex(T val) {
    v = new Vertex<T>(val); 
@@ -37,19 +29,16 @@ class Graph{
 	 //check to see if edge exists between them
 	 break;
    case 1:
-	 std::cout << "Test = " << test << std::endl;
      loc2 = findVertex(v2);
      *v2 = vertexArr[loc2];
      vertexArr.push_back(*v1);
      break; 
    case 2:
-	 std::cout << "Test = " << test << std::endl;
      loc1 = findVertex(v1);
      *v1 = vertexArr[loc1]; 
      vertexArr.push_back(*v2); 
      break; 
    case 3:
-	 std::cout << "Test = " << test << std::endl;
      vertexArr.push_back(*v1); 
      vertexArr.push_back(*v2);
 	 break;
@@ -74,9 +63,6 @@ class Graph{
  int searchVerts(Vertex <T> a, Vertex <T> b) {
    bool aExists = false; 
    bool bExists = false;
-   std::cout <<"Size of the edge array is now " << edgeArr.size() << std::endl;
-   std::cout << "\n size of the vertex array is now " << vertexArr.size() << "\n\n\n";
-   //std::cout << vertexArr.size(); 
    for (int i = 0; i < vertexArr.size(); i++) {
      if (vertexArr[i] == a)
        aExists = true;
@@ -94,12 +80,12 @@ class Graph{
 
  void readEdgeArr() {
    for (int i = 0; i < edgeArr.size(); i++)
-       cout << edgeArr[i] << endl;
+	 std::cout << edgeArr[i] <<'\n';
      }
  void readvertArr() {
    for (int i = 0; i < vertexArr.size(); i++)
-     std:: cout << vertexArr[i] << endl;
- }
+     std::cout << vertexArr[i] << '\n';
+}
 
  private: 
   bool directed;
