@@ -86,7 +86,12 @@ class Graph{
    for (int i = 0; i < vertexArr.size(); i++)
      std::cout << vertexArr[i] << '\n';
 }
-
+////////////*CHECK THIS LATER*////////////////
+bool isPlanar() {
+    if(edgeArr.size() > (3*vertexArr.size())-6)
+      return false; 
+}
+//////////////////////////////////////////////
  private: 
   bool directed;
   std::vector <Vertex<T> > vertexArr; 
